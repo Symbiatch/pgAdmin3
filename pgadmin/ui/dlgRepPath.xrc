@@ -58,7 +58,7 @@
                 <object class="sizeritem">
                   <object class="wxTextCtrl" name="txtConnRetry">
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxALL</flag>
+                  <flag>wxEXPAND|wxALL</flag>
                   <border>4</border>
                 </object>
               </object>

@@ -74,7 +74,7 @@
                   <object class="wxCheckBox" name="chkForward">
                     <label></label>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxALL</flag>
+                  <flag>wxEXPAND|wxALL</flag>
                   <border>4</border>
                 </object>
               </object>

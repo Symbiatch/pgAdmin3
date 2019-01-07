@@ -16,7 +16,7 @@
           <size>208,150d</size>
           <style>wxTR_HAS_BUTTONS | wxSIMPLE_BORDER</style>
         </object>
-        <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+        <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
         <border>4</border>
       </object>
       <object class="sizeritem">

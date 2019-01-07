@@ -28,7 +28,7 @@
             <object class="wxCheckBox" name="chkEnabled">
               <label></label>
             </object>
-            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+            <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
             <border>4</border>
           </object>
           <object class="sizeritem">
@@ -41,7 +41,7 @@
           <object class="sizeritem">
         	<object class="wxTextCtrl" name="txtHostname">
         	</object>
-            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+            <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
             <border>4</border>
           </object>
           <object class="sizeritem">
@@ -54,7 +54,7 @@
           <object class="sizeritem">
         	<object class="wxTextCtrl" name="txtPort">
         	</object>
-            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+            <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
             <border>4</border>
           </object>
           <object class="sizeritem">
@@ -67,7 +67,7 @@
           <object class="sizeritem">
         	<object class="wxTextCtrl" name="txtDatabase">
         	</object>
-            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+            <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
             <border>4</border>
           </object>
           <object class="sizeritem">
@@ -80,7 +80,7 @@
           <object class="sizeritem">
         	<object class="wxTextCtrl" name="txtUsername">
         	</object>
-            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+            <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
             <border>4</border>
           </object>
           <object class="sizeritem">
@@ -94,7 +94,7 @@
         	<object class="wxTextCtrl" name="txtPassword">
         	 <style>wxTE_PASSWORD</style>
         	</object>
-            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+            <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
             <border>4</border>
           </object>
           <object class="sizeritem">
@@ -108,7 +108,7 @@
         	<object class="wxTextCtrl" name="txtRePassword">
         	 <style>wxTE_PASSWORD</style>
         	</object>
-            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+            <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
             <border>4</border>
           </object>
         </object>

@@ -105,7 +105,7 @@
                       </object>
                       <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
                       <border>4</border>
-                      <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                     <object class="sizeritem">
                       <object class="wxStaticText" name="stValue">
@@ -119,7 +119,7 @@
                       </object>
                       <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
                       <border>4</border>
-                      <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                   </object>
                   <flag>wxALL|wxEXPAND|wxALIGN_BOTTOM|wxALIGN_CENTRE_HORIZONTAL</flag>

@@ -315,7 +315,7 @@
                         <content/>
                         <style>wxCB_DROPDOWN</style>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                     <object class="sizeritem">
                       <object class="wxStaticText" name="stMode">
@@ -359,7 +359,7 @@
                     </object>
                     <object class="sizeritem">
                       <object class="wxTextCtrl" name="txtArgName"/>
-                      <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                     <object class="sizeritem">
                       <object class="wxStaticText" name="stArgDefVal">
@@ -369,7 +369,7 @@
                     </object>
                     <object class="sizeritem">
                       <object class="wxTextCtrl" name="txtArgDefVal"/>
-                      <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                     <cols>2</cols>
                     <vgap>4</vgap>
