@@ -902,16 +902,19 @@ int pgServer::Connect(frmMain *form, bool askPassword, const wxString &pwd, bool
 		{
 			sql += wxT(", CASE WHEN usesuper THEN pg_conf_load_time() ELSE NULL END as confloadedsince");
 		}
-		if (conn->BackendMinimumVersion(8, 5))
+		if (!conn->BackendMinimumVersion(10, 0))
 		{
-			sql += wxT(", CASE WHEN usesuper THEN pg_is_in_recovery() ELSE NULL END as inrecovery");
-			sql += wxT(", CASE WHEN usesuper THEN pg_last_xlog_receive_location() ELSE NULL END as receiveloc");
-			sql += wxT(", CASE WHEN usesuper THEN pg_last_xlog_replay_location() ELSE NULL END as replayloc");
-		}
-		if (conn->BackendMinimumVersion(9, 1))
-		{
-			sql += wxT(", CASE WHEN usesuper THEN pg_last_xact_replay_timestamp() ELSE NULL END as replay_timestamp");
-			sql += wxT(", CASE WHEN usesuper AND pg_is_in_recovery() THEN pg_is_xlog_replay_paused() ELSE NULL END as isreplaypaused");
+			if (conn->BackendMinimumVersion(8, 5))
+			{
+				sql += wxT(", CASE WHEN usesuper THEN pg_is_in_recovery() ELSE NULL END as inrecovery");
+				sql += wxT(", CASE WHEN usesuper THEN pg_last_xlog_receive_location() ELSE NULL END as receiveloc");
+				sql += wxT(", CASE WHEN usesuper THEN pg_last_xlog_replay_location() ELSE NULL END as replayloc");
+			}
+			if (conn->BackendMinimumVersion(9, 1))
+			{
+				sql += wxT(", CASE WHEN usesuper THEN pg_last_xact_replay_timestamp() ELSE NULL END as replay_timestamp");
+				sql += wxT(", CASE WHEN usesuper AND pg_is_in_recovery() THEN pg_is_xlog_replay_paused() ELSE NULL END as isreplaypaused");
+			}
 		}
 
 		pgSet *set = ExecuteSet(sql + wxT("\n  FROM pg_user WHERE usename=current_user"));
@@ -923,16 +926,19 @@ int pgServer::Connect(frmMain *form, bool askPassword, const wxString &pwd, bool
 				iSetUpSince(set->GetDateTime(wxT("upsince")));
 			if (conn->BackendMinimumVersion(8, 4))
 				iSetConfLoadedSince(set->GetDateTime(wxT("confloadedsince")));
-			if (conn->BackendMinimumVersion(8, 5))
+			if (!conn->BackendMinimumVersion(10, 0))
 			{
-				iSetInRecovery(set->GetBool(wxT("inrecovery")));
-				iSetReplayLoc(set->GetVal(wxT("replayloc")));
-				iSetReceiveLoc(set->GetVal(wxT("receiveloc")));
-			}
-			if (conn->BackendMinimumVersion(9, 1))
-			{
-				iSetReplayTimestamp(set->GetVal(wxT("replay_timestamp")));
-				SetReplayPaused(set->GetBool(wxT("isreplaypaused")));
+				if (conn->BackendMinimumVersion(8, 5))
+				{
+					iSetInRecovery(set->GetBool(wxT("inrecovery")));
+					iSetReplayLoc(set->GetVal(wxT("replayloc")));
+					iSetReceiveLoc(set->GetVal(wxT("receiveloc")));
+				}
+				if (conn->BackendMinimumVersion(9, 1))
+				{
+					iSetReplayTimestamp(set->GetVal(wxT("replay_timestamp")));
+					SetReplayPaused(set->GetBool(wxT("isreplaypaused")));
+				}
 			}
 			delete set;
 		}
@@ -1259,19 +1265,22 @@ void pgServer::ShowTreeDetail(ctlTree *browser, frmMain *form, ctlListView *prop
 				properties->AppendItem(_("Configuration loaded since"), GetConfLoadedSince());
 			if (conn->BackendMinimumVersion(8, 1))
 				properties->AppendItem(wxT("Autovacuum"), (autovacuumRunning ? _("running") : _("not running")));
-			if (conn->BackendMinimumVersion(8, 5))
+			if (!conn->BackendMinimumVersion(10, 0))
 			{
-				properties->AppendItem(_("In recovery"), (GetInRecovery() ? _("yes") : _("no")));
-				properties->AppendItem(_("Last XLOG receive location"), GetReceiveLoc());
-				properties->AppendItem(_("Last XLOG replay location"), GetReplayLoc());
-			}
-			if (conn->BackendMinimumVersion(9, 1))
-			{
-				properties->AppendItem(_("Last XACT replay timestamp"), GetReplayTimestamp());
-				if (GetInRecovery())
-					properties->AppendItem(_("Replay paused"), (GetReplayPaused() ? _("paused") : _("running")));
-				else
-					properties->AppendItem(_("Replay paused"), wxEmptyString);
+				if (conn->BackendMinimumVersion(8, 5))
+				{
+					properties->AppendItem(_("In recovery"), (GetInRecovery() ? _("yes") : _("no")));
+					properties->AppendItem(_("Last XLOG receive location"), GetReceiveLoc());
+					properties->AppendItem(_("Last XLOG replay location"), GetReplayLoc());
+				}
+				if (conn->BackendMinimumVersion(9, 1))
+				{
+					properties->AppendItem(_("Last XACT replay timestamp"), GetReplayTimestamp());
+					if (GetInRecovery())
+						properties->AppendItem(_("Replay paused"), (GetReplayPaused() ? _("paused") : _("running")));
+					else
+						properties->AppendItem(_("Replay paused"), wxEmptyString);
+				}
 			}
 		}
 		if (GetServerControllable())

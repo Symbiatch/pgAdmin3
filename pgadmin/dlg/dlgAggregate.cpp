@@ -338,14 +338,28 @@ void dlgAggregate::OnChangeType(wxCommandEvent &ev)
 	// If there are no input_types specified, assume "ANY" for a count(*) style aggregate.
 	if (lstInputTypes->GetItemCount() > 0 && cbStateType->GetGuessedSelection() >= 0)
 	{
-		set = connection->ExecuteSet(
-		          wxT("SELECT proname, nspname, prorettype\n")
-		          wxT("  FROM pg_proc p\n")
-		          wxT("  JOIN pg_type t ON t.oid=p.prorettype\n")
-		          wxT("  JOIN pg_namespace n ON n.oid=pronamespace\n")
-		          wxT(" WHERE prorettype = ") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) +
-		          wxT("\n   AND proisagg = FALSE")
-		          wxT("\n   AND proargtypes = '") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) + wxT(" ") + GetInputTypesOidList() + wxT("'"));
+		if (connection->BackendMinimumVersion(11, 0))
+		{
+			set = connection->ExecuteSet(
+				wxT("SELECT proname, nspname, prorettype\n")
+				wxT("  FROM pg_proc p\n")
+				wxT("  JOIN pg_type t ON t.oid=p.prorettype\n")
+				wxT("  JOIN pg_namespace n ON n.oid=pronamespace\n")
+				wxT(" WHERE prorettype = ") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) +
+				wxT("\n   AND prokind <> 'a'")
+				wxT("\n   AND proargtypes = '") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) + wxT(" ") + GetInputTypesOidList() + wxT("'"));
+		}
+		else
+		{
+			set = connection->ExecuteSet(
+				wxT("SELECT proname, nspname, prorettype\n")
+				wxT("  FROM pg_proc p\n")
+				wxT("  JOIN pg_type t ON t.oid=p.prorettype\n")
+				wxT("  JOIN pg_namespace n ON n.oid=pronamespace\n")
+				wxT(" WHERE prorettype = ") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) +
+				wxT("\n   AND proisagg = FALSE")
+				wxT("\n   AND proargtypes = '") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) + wxT(" ") + GetInputTypesOidList() + wxT("'"));
+		}
 
 		if (set)
 		{
@@ -363,13 +377,26 @@ void dlgAggregate::OnChangeType(wxCommandEvent &ev)
 		// function taking an argument of state_type
 		cbFinalFunc->Append(wxT(" "));
 
-		set = connection->ExecuteSet(
-		          wxT("SELECT proname, nspname, prorettype\n")
-		          wxT("  FROM pg_proc p\n")
-		          wxT("  JOIN pg_type t ON t.oid=p.prorettype\n")
-		          wxT("  JOIN pg_namespace n ON n.oid=pronamespace\n")
-		          wxT(" WHERE proisagg = FALSE")
-		          wxT("\n   AND proargtypes = '") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) + wxT("'"));
+		if (connection->BackendMinimumVersion(11, 0))
+		{
+			set = connection->ExecuteSet(
+				wxT("SELECT proname, nspname, prorettype\n")
+				wxT("  FROM pg_proc p\n")
+				wxT("  JOIN pg_type t ON t.oid=p.prorettype\n")
+				wxT("  JOIN pg_namespace n ON n.oid=pronamespace\n")
+				wxT(" WHERE prokind <> 'a'")
+				wxT("\n   AND proargtypes = '") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) + wxT("'"));
+		}
+		else
+		{
+			set = connection->ExecuteSet(
+				wxT("SELECT proname, nspname, prorettype\n")
+				wxT("  FROM pg_proc p\n")
+				wxT("  JOIN pg_type t ON t.oid=p.prorettype\n")
+				wxT("  JOIN pg_namespace n ON n.oid=pronamespace\n")
+				wxT(" WHERE proisagg = FALSE")
+				wxT("\n   AND proargtypes = '") + GetTypeOid(cbStateType->GetGuessedSelection() + 1) + wxT("'"));
+		}
 
 		if (set)
 		{

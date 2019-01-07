@@ -606,6 +606,16 @@ void dlgSearchObject::OnSearch(wxCommandEvent &ev)
 		else // use pd as a subquery
 			pd += wxT(" pd ");
 
+		wxString isagg;
+		if (currentdb->BackendMinimumVersion(11, 0))
+		{
+			isagg = wxT("p_.prokind <> 'a'");
+		}
+		else
+		{
+			isagg = wxT("p_.proisagg = FALSE");
+		}
+
 		searchSQL += wxT("SELECT CASE")
 		             wxT("	WHEN c.relkind = 'r' THEN 'Tables'")
 		             wxT("	WHEN c.relkind = 'S' THEN 'Sequences'")
@@ -641,7 +651,7 @@ void dlgSearchObject::OnSearch(wxCommandEvent &ev)
 		             wxT("       ':Schemas/' || n.nspname || '/' ||")
 		             wxT("         case when p_t.typname = 'trigger' then ':Trigger Functions/' else ':Functions/' end || p_.proname AS path, n.nspname")
 		             wxT("  from ") + pd +
-		             wxT("  join pg_proc p_  on pd.relname = 'pg_proc' and pd.objoid = p_.oid and p_.proisagg = false")
+		             wxT("  join pg_proc p_  on pd.relname = 'pg_proc' and pd.objoid = p_.oid and ") + isagg +
 		             wxT("	left join pg_type p_t on p_.prorettype = p_t.oid")
 		             wxT("	left join pg_namespace n on p_.pronamespace = n.oid")
 		             wxT("	union")
