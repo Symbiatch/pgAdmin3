@@ -1,5 +1,14 @@
 pgAdmin III README
 ==================
+
+-------------------------------------------------------------------------------
+NOTE! This is a fork of the official pgAdmin3 due to it no longer being
+maintained. This fork is meant to provide support for new PostgreSQL server
+versions to users who want to use pgAdmin3 rather than pgAdmin4. If you have
+issues with this version do NOT contact the original developers, rather post
+an issue or a pull request on Github.
+-------------------------------------------------------------------------------
+
  
 Introduction
 ------------
