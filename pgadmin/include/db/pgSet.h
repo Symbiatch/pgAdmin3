@@ -86,7 +86,7 @@ public:
 	long ColTypeMod(const int col) const;
 	wxString ColType(const int col) const;
 	wxString ColFullType(const int col) const;
-	pgTypClass ColTypClass(const int col) const;
+	pgTypClass ColTypClass(const int col);
 
 	OID GetInsertedOid() const
 	{

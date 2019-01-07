@@ -96,7 +96,7 @@ long pgSet::GetInsertedCount() const
 }
 
 
-pgTypClass pgSet::ColTypClass(const int col) const
+pgTypClass pgSet::ColTypClass(const int col)
 {
 	wxASSERT(col < nCols && col >= 0);
 
