@@ -189,15 +189,15 @@
                         <object class="sizeritem">
                           <object class="wxTextCtrl" name="txtValue">
                           </object>
-                          <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                          <flag>wxEXPAND</flag>
                         </object>
                         <object class="sizeritem">
                           <object class="wxCheckBox" name="chkValue">
                             <label></label>
                           </object>
-                          <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                          <flag>wxEXPAND</flag>
                         </object>
-                        <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                        <flag>wxEXPAND</flag>
                       </object>
                       <flag>wxALL|wxGROW</flag>
                       <border>4</border>

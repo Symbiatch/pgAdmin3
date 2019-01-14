@@ -219,7 +219,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                   <border>0</border>
                 </object>
               </object>
@@ -272,7 +272,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                   <border>0</border>
                 </object>
               </object>

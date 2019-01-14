@@ -136,7 +136,7 @@
                         <label>&amp;Remove</label>
                         <size>60,-1d</size>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_BOTTOM|wxALL</flag>
+                      <flag>wxEXPAND|wxALL</flag>
                       <border>4</border>
                     </object>
                   </object>

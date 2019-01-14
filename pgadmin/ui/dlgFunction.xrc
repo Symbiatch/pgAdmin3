@@ -376,7 +376,7 @@
                     <hgap>4</hgap>
                     <growablecols>1</growablecols>
                   </object>
-                  <flag>wxALL|wxEXPAND|wxALIGN_BOTTOM|wxALIGN_CENTRE_HORIZONTAL</flag>
+                  <flag>wxALL|wxEXPAND</flag>
                   <border>5</border>
                 </object>
                 <object class="sizeritem">
@@ -546,15 +546,15 @@
                         <growablecols>0,1</growablecols>
                         <object class="sizeritem">
                           <object class="wxTextCtrl" name="txtValue"/>
-                          <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                          <flag>wxEXPAND</flag>
                         </object>
                         <object class="sizeritem">
                           <object class="wxCheckBox" name="chkValue">
                             <label></label>
                           </object>
-                          <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                          <flag>wxEXPAND</flag>
                         </object>
-                        <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                        <flag>wxEXPAND</flag>
                       </object>
                       <flag>wxALL|wxGROW</flag>
                       <border>4</border>

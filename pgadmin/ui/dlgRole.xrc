@@ -276,7 +276,7 @@
                         <label>&gt;&gt;</label>
                         <size>18,-1d</size>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_BOTTOM|wxALL</flag>
+                      <flag>wxEXPAND|wxALL</flag>
                       <border>4</border>
                     </object>
                     <object class="sizeritem">
@@ -284,7 +284,7 @@
                         <label>&lt;&lt;</label>
                         <size>18,-1d</size>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_TOP|wxALL</flag>
+                      <flag>wxEXPAND|wxALL</flag>
                       <border>4</border>
                     </object>
                   <flag>wxALIGN_CENTRE_VERTICAL|wxALL</flag>
@@ -397,15 +397,15 @@
                         <object class="sizeritem">
                           <object class="wxTextCtrl" name="txtValue">
                           </object>
-                          <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                          <flag>wxEXPAND</flag>
                         </object>
                         <object class="sizeritem">
                           <object class="wxCheckBox" name="chkValue">
                             <label></label>
                           </object>
-                          <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                          <flag>wxEXPAND</flag>
                         </object>
-                        <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                        <flag>wxEXPAND</flag>
                       </object>
                       <flag>wxALL|wxGROW</flag>
                       <border>4</border>

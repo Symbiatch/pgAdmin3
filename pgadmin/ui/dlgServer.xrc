@@ -337,13 +337,13 @@
                         <label>Password</label>
                         <style>wxRB_GROUP</style>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                     <object class="sizeritem">
                       <object class="wxRadioButton" name="radioBtnKeyfile">
                         <label>Identity file</label>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                   </object>
                   <flag>wxALIGN_CENTRE_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>

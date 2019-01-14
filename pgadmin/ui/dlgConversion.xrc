@@ -31,7 +31,7 @@
                 <object class="sizeritem">
                   <object class="wxTextCtrl" name="txtName">
                   </object>
-                  <flag>wxEXPAND|wxALIGN_TOP|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">

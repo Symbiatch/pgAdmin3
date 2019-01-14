@@ -2871,7 +2871,7 @@ void frmQuery::OnQueryComplete(pgQueryResultEvent &ev)
 					wEnd++;
 					c = sqlQuery->GetCharAt(sPos + wEnd);
 				}
-				sqlQuery->SetStyling(wEnd, wxSTC_INDIC0_MASK);
+				sqlQuery->SetStyling(wEnd, 0);
 
 				int line = 0, maxLine = sqlQuery->GetLineCount();
 				while (line < maxLine && sqlQuery->GetLineEndPosition(line) < errPos + selStart + 1)

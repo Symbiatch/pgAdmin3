@@ -211,7 +211,7 @@
                             <size>111,-1d</size>
                             <content/>
                           </object>
-                          <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                          <flag>wxEXPAND</flag>
                         </object>
                         <object class="sizeritem">
                           <object class="wxChoice" name="cbDictionary">
@@ -225,7 +225,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxALL|wxEXPAND|wxALIGN_BOTTOM|wxALIGN_CENTRE_HORIZONTAL</flag>
+                  <flag>wxALL|wxEXPAND</flag>
                   <border>5</border>
                 </object>
                 <object class="sizeritem">

@@ -107,13 +107,13 @@
                     <style>wxTE_MULTILINE</style>
                   </object>
                   <option>1</option>
-                  <flag>wxEXPAND|wxALIGN_CENTER|wxALL</flag>
+                  <flag>wxEXPAND|wxALL</flag>
                 </object>
               </object>
             </object>
           </object>
         </object>
-        <flag>wxEXPAND|wxALIGN_CENTER|wxALL</flag>
+        <flag>wxEXPAND|wxALL</flag>
         <border>3</border>
       </object>
       <object class="sizeritem">

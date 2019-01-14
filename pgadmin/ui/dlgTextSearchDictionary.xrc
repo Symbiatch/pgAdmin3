@@ -192,7 +192,7 @@
                       <flag>wxEXPAND</flag>
                     </object>
                   </object>
-                  <flag>wxALL|wxEXPAND|wxALIGN_BOTTOM|wxALIGN_CENTRE_HORIZONTAL</flag>
+                  <flag>wxALL|wxEXPAND</flag>
                   <border>5</border>
                 </object>
                 <object class="sizeritem">

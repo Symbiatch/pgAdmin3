@@ -95,7 +95,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                 </object>
                 <object class="sizeritem">
                   <object class="wxStaticText" name="stNode">
@@ -123,7 +123,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                 </object>
                 <object class="sizeritem">
                   <object class="wxStaticText" name="stAdminNode">
@@ -157,7 +157,7 @@
                           <border>4</border>
                         </object>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                     <object class="sizeritem">
                       <object class="wxComboBox" name="cbAdminNode">
@@ -168,7 +168,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                 </object>
                 <object class="sizeritem">
                   <object class="wxStaticText" name="stComment">

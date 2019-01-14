@@ -257,7 +257,7 @@ void wxGridCellComboBoxRenderer::Draw(wxGrid &grid, wxGridCellAttr &attr, wxDC &
 	dc.DrawPolygon(3, point);
 	if (m_border == wxLAYOUT_TOP)
 	{
-		dc.SetPen(wxPen(*wxBLACK, 1, wxDOT));
+		dc.SetPen(wxPen(*wxBLACK, 1, wxPENSTYLE_DOT));
 		dc.DrawLine(rectCell.GetRight(), rectCell.GetTop(),
 		            rectCell.GetLeft(), rectCell.GetTop());
 	}
@@ -336,7 +336,7 @@ void wxGridCellButtonRenderer::Draw(wxGrid &grid, wxGridCellAttr &attr, wxDC &dc
 
 	if (m_border == wxLAYOUT_TOP)
 	{
-		dc.SetPen(wxPen(*wxBLACK, 1, wxDOT));
+		dc.SetPen(wxPen(*wxBLACK, 1, wxPENSTYLE_DOT));
 		dc.DrawLine(rectCell.GetRight(), rectCell.GetTop(),
 		            rectCell.GetLeft(), rectCell.GetTop());
 	}

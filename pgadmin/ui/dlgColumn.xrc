@@ -263,7 +263,7 @@
                     <object class="sizeritem">
                       <object class="wxTextCtrl" name="txtValue">
                       </object>
-                      <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                      <flag>wxEXPAND</flag>
                     </object>
                   </object>
                   <flag>wxGROW</flag>

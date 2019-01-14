@@ -90,7 +90,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                 </object>
                 <object class="sizeritem">
                   <object class="wxStaticText" name="stEnd">
@@ -119,7 +119,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                 </object>
                 <object class="sizeritem">
                   <object class="wxStaticText" name="stComment">
@@ -374,7 +374,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                 </object>
                 <object class="sizeritem">
                   <object class="wxFlexGridSizer">
@@ -407,7 +407,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
+                  <flag>wxEXPAND</flag>
                 </object>
               </object>
             </object>
