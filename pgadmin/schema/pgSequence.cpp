@@ -117,17 +117,17 @@ bool pgSequence::DropObject(wxFrame *frame, ctlTree *browser, bool cascaded)
 void pgSequence::UpdateValues()
 {
 	pgSet *sequence = ExecuteSet(
-	                      wxT("SELECT last_value, min_value, max_value, cache_value, is_cycled, increment_by, is_called\n")
-	                      wxT("  FROM ") + GetQuotedFullIdentifier());
+	                      wxT("SELECT last_value, min_value, max_value, cache_size, cycle, increment_by\n")
+	                      wxT("  FROM pg_sequences where schemaname='") + this->GetSchema()->GetQuotedIdentifier() + wxT("' and sequencename='") + GetQuotedIdentifier() + wxT("'"));
 	if (sequence)
 	{
 		lastValue = sequence->GetLongLong(wxT("last_value"));
 		minValue = sequence->GetLongLong(wxT("min_value"));
 		maxValue = sequence->GetLongLong(wxT("max_value"));
-		cacheValue = sequence->GetLongLong(wxT("cache_value"));
+		cacheValue = sequence->GetLongLong(wxT("cache_size"));
 		increment = sequence->GetLongLong(wxT("increment_by"));
-		cycled = sequence->GetBool(wxT("is_cycled"));
-		called = sequence->GetBool(wxT("is_called"));
+		cycled = sequence->GetBool(wxT("cycle"));
+//		called = sequence->GetBool(wxT("is_called"));
 		if (called)
 			nextValue = lastValue + increment;
 		else
@@ -188,7 +188,7 @@ void pgSequence::ShowTreeDetail(ctlTree *browser, frmMain *form, ctlListView *pr
 		properties->AppendItem(_("Increment"), GetIncrement());
 		properties->AppendItem(_("Cache"), GetCacheValue());
 		properties->AppendYesNoItem(_("Cycled?"), GetCycled());
-		properties->AppendYesNoItem(_("Called?"), GetCalled());
+//		properties->AppendYesNoItem(_("Called?"), GetCalled());
 		properties->AppendYesNoItem(_("System sequence?"), GetSystemObject());
 		properties->AppendItem(_("Comment"), firstLineOnly(GetComment()));
 

@@ -75,10 +75,10 @@ public:
 	{
 		return cycled;
 	}
-	bool GetCalled() const
+/*	bool GetCalled() const
 	{
 		return called;
-	}
+	}*/
 
 	bool DropObject(wxFrame *frame, ctlTree *browser, bool cascaded);
 	wxString GetSql(ctlTree *browser);
