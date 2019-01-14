@@ -31,7 +31,7 @@
                 <object class="sizeritem">
                   <object class="wxTextCtrl" name="txtName">
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">
@@ -44,7 +44,7 @@
                 <object class="sizeritem">
                   <object class="wxTextCtrl" name="txtID">
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">
@@ -58,7 +58,7 @@
                   <object class="wxTextCtrl" name="txtPasswd">
                     <style>wxTE_PASSWORD</style>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">
@@ -72,7 +72,7 @@
                   <object class="wxTextCtrl" name="txtRePasswd">
                     <style>wxTE_PASSWORD</style>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">
@@ -92,7 +92,7 @@
                       <object class="wxCalendarBox" name="datValidUntil">
                         <style>wxDP_ALLOWNONE|wxDP_DROPDOWN</style>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                      <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                       <border>4</border>
                     </object>
                     <object class="sizeritem">
@@ -102,7 +102,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">
@@ -117,7 +117,7 @@
                     <content/>
                     <style>wxCB_READONLY|wxCB_DROPDOWN</style>
                   </object>
-                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
               </object>
@@ -237,7 +237,7 @@
                     <pos>5,6d</pos>
                     <style>wxLC_REPORT|wxLC_SINGLE_SEL</style>
                   </object>
-                  <flag>wxALL|wxGROW|wxALIGN_CENTRE</flag>
+                  <flag>wxALL|wxGROW</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">
@@ -264,7 +264,7 @@
                       <border>4</border>
                     </object>
                   </object>
-                  <flag>wxALL|wxGROW|wxALIGN_CENTRE</flag>
+                  <flag>wxALL|wxGROW</flag>
                   <border>3</border>
                 </object>
                 <object class="sizeritem">
@@ -285,7 +285,7 @@
                         <content/>
                         <style>wxCB_DROPDOWN</style>
                       </object>
-                      <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                      <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
                       <border>4</border>
                     </object>
                     <object class="sizeritem">
@@ -314,7 +314,7 @@
                         </object>
                         <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL</flag>
                       </object>
-                      <flag>wxALL|wxGROW|wxALIGN_CENTRE</flag>
+                      <flag>wxALL|wxGROW</flag>
                       <border>4</border>
                     </object>
                   </object>

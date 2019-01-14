@@ -65,14 +65,14 @@
               <label>&amp;OK</label>
               <default>1</default>
             </object>
-            <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+            <flag>wxEXPAND|wxALL</flag>
             <border>4</border>
           </object>
           <object class="sizeritem">
             <object class="wxButton" name="wxID_CANCEL">
               <label>&amp;Cancel</label>
             </object>
-            <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+            <flag>wxEXPAND|wxALL</flag>
             <border>4</border>
           </object>
         </object>
