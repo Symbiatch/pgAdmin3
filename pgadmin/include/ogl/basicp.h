@@ -227,7 +227,7 @@ public:
 	{
 		return m_penStyle;
 	}
-	inline void SetPenStyle(int style)
+	inline void SetPenStyle(wxPenStyle style)
 	{
 		m_penStyle = style;
 		m_actualPenObject = NULL;
@@ -268,7 +268,7 @@ public:
 
 	// New members for specifying divided rectangle division colour/style 30/6/94
 	wxString              m_penColour;
-	int                   m_penStyle;
+	wxPenStyle            m_penStyle;
 	wxPen                *m_actualPenObject;
 
 };
