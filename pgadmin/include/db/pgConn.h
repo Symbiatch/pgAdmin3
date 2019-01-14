@@ -88,7 +88,7 @@ public:
 	pgConn(const wxString &server = wxT(""), const wxString &service = wxT(""), const wxString &hostaddr = wxT(""),
 	       const wxString &database = wxT(""), const wxString &username = wxT(""), const wxString &password = wxT(""),
 	       int port = 5432, const wxString &rolename = wxT(""), int sslmode = 0, OID oid = 0,
-	       const wxString &applicationname = wxT("pgAdmin"),
+	       const wxString &applicationname = wxT("pgAdminR"),
 	       const wxString &sslcert = wxT(""), const wxString &sslkey = wxT(""), const wxString &sslrootcert = wxT(""), const wxString &sslcrl = wxT(""),
 	       const bool sslcompression = true);
 	~pgConn();

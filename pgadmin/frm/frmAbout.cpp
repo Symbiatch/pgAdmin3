@@ -86,6 +86,8 @@ void frmAbout::OnPaint(wxPaintEvent &WXUNUSED(event))
 	pos.y += appearanceFactory->GetSplashTextOffset();
 	dc.DrawText(COPYRIGHT, pos);
 	pos.y += appearanceFactory->GetSplashTextOffset();
+	dc.DrawText(COPYRIGHT2, pos);
+	pos.y += appearanceFactory->GetSplashTextOffset();
 	dc.DrawText(LICENSE, pos);
 }
 
