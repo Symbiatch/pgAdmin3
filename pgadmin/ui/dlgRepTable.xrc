@@ -103,7 +103,7 @@
             </object>
           </object>
         </object>
-        <flag>wxEXPAND|wxALIGN_CENTRE|wxALL</flag>
+        <flag>wxEXPAND|wxALL</flag>
         <border>3</border>
       </object>
       <object class="sizeritem">
