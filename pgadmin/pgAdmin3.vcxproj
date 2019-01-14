@@ -133,8 +133,6 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
@@ -179,6 +177,8 @@
       <PrecompiledHeaderOutputFile>.\Release/pgAdmin3.pch</PrecompiledHeaderOutputFile>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -276,20 +276,15 @@
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(OPENSSL)/include;$(WXWIN)/lib/vc141_dll/mswud/;$(WXWIN)/include;$(WXWIN)/contrib/include;$(PGDIR)/include;$(PGBUILD)/include/;$(PGBUILD)/libxml2/include/;$(PGBUILD)/libxslt/include/;$(PGBUILD)/iconv/include/;$(PROJECTDIR)/include;$(PGDIR)/include/server;$(PROJECTDIR)/include/libssh2;$(PROJECTDIR)/include/libssh2/Win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE=1;HAVE_OPENSSL_CRYPTO;LIBSSH2_OPENSSL;WIN32;_DEBUG;_WINDOWS;__WINDOWS__;__WXMSW__;WXUSINGDLL;DEBUG=1;__WXDEBUG__;__WIN95__;__WIN32__;WINVER=0x0400;STRICT;wxUSE_UNICODE=1;UNICODE;PG_SSL;HAVE_CONNINFO_PARSE;LIBSSH2_OPENSSL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pgadmin3.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Debug/pgAdmin3.pch</PrecompiledHeaderOutputFile>
-      <AssemblerOutput>All</AssemblerOutput>
-      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
-      <ObjectFileName>.\Debug/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
-      <BrowseInformationFile>.\Debug/</BrowseInformationFile>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -298,20 +293,17 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>libpq.lib;wxbase31ud.lib;wxbase31ud_xml.lib;wxbase31ud_net.lib;wxmsw31ud_adv.lib;wxmsw31ud_core.lib;wxmsw31ud_html.lib;wxmsw31ud_aui.lib;wxregexud.lib;wxpngd.lib;wxzlibd.lib;wxjpegd.lib;wxtiffd.lib;wxmsw31ud_stc.lib;wxmsw31ud_xrc.lib;wxexpatd.lib;libeay32MD.lib;libxml2.lib;libxslt.lib;iconv.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;oleaut32.lib;ole32.lib;shell32.lib;odbc32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Debug/pgAdmin3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(OPENSSL)/lib/VC;$(WXWIN)/lib/vc141_dll;$(PGDIR)/lib;$(PGBUILD)/lib;$(PGBUILD)/libxml2/lib;$(PGBUILD)/libxslt/lib;$(PGBUILD)/iconv/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libcd.lib;libcid.lib;msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Debug/pgAdmin3.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>.\Debug/pgAdmin3.map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <NoEntryPoint>false</NoEntryPoint>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
