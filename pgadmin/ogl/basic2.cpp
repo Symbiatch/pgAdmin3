@@ -1746,7 +1746,7 @@ wxShapeRegion::wxShapeRegion()
 	m_regionName = wxEmptyString;
 	m_textColour = wxT("BLACK");
 	m_penColour = wxT("BLACK");
-	m_penStyle = wxSOLID;
+	m_penStyle = wxPENSTYLE_SOLID;
 	m_actualPenObject = NULL;
 }
 

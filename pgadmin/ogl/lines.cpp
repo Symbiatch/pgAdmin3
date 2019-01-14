@@ -1152,10 +1152,10 @@ void wxLineShape::OnDraw(wxDC &dc)
 
 		// Problem with pen - if not a solid pen, does strange things
 		// to the arrowhead. So make (get) a new pen that's solid.
-		if (m_pen && (m_pen->GetStyle() != wxSOLID))
+		if (m_pen && (m_pen->GetStyle() != wxPENSTYLE_SOLID))
 		{
 			wxPen *solid_pen =
-			    wxThePenList->FindOrCreatePen(m_pen->GetColour(), 1, wxSOLID);
+			    wxThePenList->FindOrCreatePen(m_pen->GetColour(), 1, wxPENSTYLE_SOLID);
 			if (solid_pen)
 				dc.SetPen(* solid_pen);
 		}
