@@ -676,8 +676,8 @@ wxString dlgRole::GetSql()
 		{
 			if (datValidUntil->GetValue().IsValid())
 				options += wxT("\n   VALID UNTIL ") + qtDbString(DateToAnsiStr(datValidUntil->GetValue() + timValidUntil->GetValue()));
-			else if (!role->GetIsValidInfinity() && role->GetAccountExpires().GetValue() != -1)
-				options += wxT("\n   VALID UNTIL 'infinity'");
+			else if (!role->GetIsValidInfinity() && role->GetAccountExpires().IsValid())
+				options += wxT("\n   VALID UNTIL 'infinity'"); // TODO SK: Make sure this is ok
 		}
 
 		if (txtConnectionLimit->GetValue().Length() == 0)
