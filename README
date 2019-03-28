@@ -7,6 +7,11 @@ maintained. This fork is meant to provide support for new PostgreSQL server
 versions to users who want to use pgAdmin3 rather than pgAdmin4. If you have
 issues with this version do NOT contact the original developers, rather post
 an issue or a pull request on Github.
+
+The binaries are available at https://tokavuh.com/pgadmin3redux/
+Note! The application is in debug mode and will show some warnings. I am
+trying to get it to compile and work in release mode so these would go away
+as well as fixing the underlying issues (newer wxWidgets libraries).
 -------------------------------------------------------------------------------
 
  
