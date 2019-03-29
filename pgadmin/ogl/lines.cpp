@@ -919,7 +919,7 @@ void wxLineShape::OnDrawOutline(wxDC &dc, double WXUNUSED(x), double WXUNUSED(y)
 	wxPen *old_pen = m_pen;
 	wxBrush *old_brush = m_brush;
 
-	wxPen dottedPen(wxColour(0, 0, 0), 1, wxDOT);
+	wxPen dottedPen(wxColour(0, 0, 0), 1, wxPENSTYLE_DOT);
 	SetPen(& dottedPen);
 	SetBrush( (wxBrush *) wxTRANSPARENT_BRUSH );
 
@@ -2392,7 +2392,7 @@ wxLabelShape::wxLabelShape(wxLineShape *parent, wxShapeRegion *region, double w,
 {
 	m_lineShape = parent;
 	m_shapeRegion = region;
-	SetPen(wxThePenList->FindOrCreatePen(wxColour(0, 0, 0), 1, wxDOT));
+	SetPen(wxThePenList->FindOrCreatePen(wxColour(0, 0, 0), 1, wxPENSTYLE_DOT));
 }
 
 wxLabelShape::~wxLabelShape()
