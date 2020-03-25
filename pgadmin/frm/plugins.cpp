@@ -380,8 +380,10 @@ bool pluginUtilityFactory::CheckEnable(pgObject *obj)
 	{
 		// If we need a specific server type, we can't enable unless
 		// we have a connection.
-		if (!obj || !(obj->GetConnection()->GetStatus() == PGCONN_OK))
-			return false;
+    if(!obj) return false;
+    pgConn *pConn = obj->GetConnection();
+    if(!pConn) return false;
+    if(pConn->GetStatus() != PGCONN_OK) return false;
 
 		// Get the server type.
 		wxString serverType = wxT("postgresql");
