@@ -5,4 +5,5 @@ Debug
 Release
 *.o
 *.log
+autom4te.cache
 

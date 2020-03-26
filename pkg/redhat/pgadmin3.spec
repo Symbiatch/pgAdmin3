@@ -1,6 +1,6 @@
 Summary:	Graphical client for PostgreSQL
 Name:		pgadmin3
-Version:	1.22.2
+Version:	1.22.3
 Release:	1%{?dist}
 License:	BSD
 Group:		Applications/Databases
