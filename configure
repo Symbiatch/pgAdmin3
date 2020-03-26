@@ -9044,7 +9044,7 @@ else
 fi
 
 
-ac_config_files="$ac_config_files Makefile branding/Makefile i18n/Makefile plugins.d/Makefile pgadmin/Makefile pkg/Makefile pkg/debian/Makefile pkg/mac/Makefile pkg/mandrake/Makefile pkg/redhat/Makefile pkg/slackware/Makefile pkg/src/Makefile pkg/suse/Makefile pkg/win32/Makefile xtra/Makefile xtra/png2c/Makefile xtra/wx-build/Makefile"
+ac_config_files="$ac_config_files Makefile branding/Makefile i18n/Makefile plugins.d/Makefile pgadmin/Makefile pkg/Makefile pkg/pgadmin3.desktop pkg/debian/Makefile pkg/mac/Makefile pkg/mandrake/Makefile pkg/redhat/Makefile pkg/slackware/Makefile pkg/src/Makefile pkg/suse/Makefile pkg/win32/Makefile xtra/Makefile xtra/png2c/Makefile xtra/wx-build/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -9824,6 +9824,7 @@ do
     "plugins.d/Makefile") CONFIG_FILES="$CONFIG_FILES plugins.d/Makefile" ;;
     "pgadmin/Makefile") CONFIG_FILES="$CONFIG_FILES pgadmin/Makefile" ;;
     "pkg/Makefile") CONFIG_FILES="$CONFIG_FILES pkg/Makefile" ;;
+    "pkg/pgadmin3.desktop") CONFIG_FILES="$CONFIG_FILES pkg/pgadmin3.desktop" ;;
     "pkg/debian/Makefile") CONFIG_FILES="$CONFIG_FILES pkg/debian/Makefile" ;;
     "pkg/mac/Makefile") CONFIG_FILES="$CONFIG_FILES pkg/mac/Makefile" ;;
     "pkg/mandrake/Makefile") CONFIG_FILES="$CONFIG_FILES pkg/mandrake/Makefile" ;;
