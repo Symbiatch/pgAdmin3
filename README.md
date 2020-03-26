@@ -49,7 +49,7 @@ under the PostgreSQL License.
 Compilation
 -----------
 
-Please see the INSTALL.md file for compilation and installation instructions.
+Please see the [INSTALL](INSTALL.md) file for compilation and installation instructions.
 
 Translation
 -----------
