@@ -171,6 +171,10 @@ public:
 	{
 		m_refreshing = refresh;
 	}
+  wxMenu* GetPluginsPopup()
+  {
+    return pluginsPopupMenu;
+  }
 
 #if defined(HAVE_OPENSSL_CRYPTO) || defined(HAVE_GCRYPT)
 	void OnSSHTunnelEvent(wxCommandEvent &event);
@@ -186,6 +190,7 @@ private:
 	ctlSQLBox *sqlPane;
 	wxMenu *newMenu, *debuggingMenu, *reportMenu, *toolsMenu, *pluginsMenu, *viewMenu,
 	       *treeContextMenu, *newContextMenu, *slonyMenu, *scriptingMenu, *viewDataMenu;
+  wxMenu *pluginsPopupMenu;
 	pgServerCollection *serversObj;
 
 	pluginUtilityFactory *lastPluginUtility;
@@ -336,7 +341,7 @@ public:
 class pluginUtilityFactory : public actionFactory
 {
 public:
-	pluginUtilityFactory(menuFactoryList *list, wxMenu *menu, PluginUtility *util);
+	pluginUtilityFactory(menuFactoryList *list, wxMenu *menu, wxMenu *popup_menu, PluginUtility *util);
 	wxWindow *StartDialog(frmMain *form, pgObject *obj);
 	bool CheckEnable(pgObject *obj);
 

@@ -138,7 +138,7 @@ class menuFactoryList : public wxArrayPtrVoid
 public:
 	~menuFactoryList();
 
-	void CheckMenu(pgObject *obj, wxMenuBar *menubar, ctlMenuToolbar *toolbar);
+	void CheckMenu(pgObject *obj, wxMenuBar *menubar, ctlMenuToolbar *toolbar, wxMenu *popup);
 	void AppendEnabledMenus(wxMenuBar *menuBar, wxMenu *treeContextMenu);
 	actionFactory *GetFactory(int id, bool actionOnly = true);
 	void RegisterMenu(wxWindow *w, wxObjectEventFunction func);

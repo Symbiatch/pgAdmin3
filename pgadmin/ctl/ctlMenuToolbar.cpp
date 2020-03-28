@@ -109,7 +109,7 @@ void ctlMenuButton::DoProcessLeftClick(wxMouseEvent &event)
 		menu_pos.y = button_size.GetHeight();
 	}
 
-	DoPopupMenu(m_menu, menu_pos.x, menu_pos.y);
+	PopupMenu(m_menu, menu_pos.x, menu_pos.y);
 }
 
 

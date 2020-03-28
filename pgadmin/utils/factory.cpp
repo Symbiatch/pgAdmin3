@@ -255,7 +255,7 @@ void menuFactoryList::RegisterMenu(wxWindow *w, wxObjectEventFunction func)
 }
 
 
-void menuFactoryList::CheckMenu(pgObject *obj, wxMenuBar *menubar, ctlMenuToolbar *toolbar)
+void menuFactoryList::CheckMenu(pgObject *obj, wxMenuBar *menubar, ctlMenuToolbar *toolbar, wxMenu *popup)
 {
 	size_t id;
 	for (id = MNU_ACTION ; id < GetCount() + MNU_ACTION ; id++)
@@ -268,6 +268,10 @@ void menuFactoryList::CheckMenu(pgObject *obj, wxMenuBar *menubar, ctlMenuToolba
 				menubar->Enable(id, how);
 			if (toolbar)
 				toolbar->EnableTool(id, how);
+      if (popup)
+      {
+        if (popup->FindItem(id)) popup->Enable(id, how);
+      }
 
 			bool chk = f->CheckChecked(obj);
 			wxMenuItem *itm = menubar->FindItem(id);

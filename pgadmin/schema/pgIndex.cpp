@@ -489,7 +489,8 @@ wxWindow *executePgstatindexFactory::StartDialog(frmMain *form, pgObject *obj)
 	else
 		((pgIndexBase *)obj)->iSetShowExtendedStatistics(false);
 
-	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(), (ctlMenuToolbar *)form->GetToolBar());
+	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(),
+    (ctlMenuToolbar *)form->GetToolBar(), form->GetPluginsPopup());
 
 	return 0;
 }
