@@ -835,7 +835,8 @@ int pgServer::Connect(frmMain *form, bool askPassword, const wxString &pwd, bool
 		dbOid = conn->GetDbOid();
 
 		// Check the server version
-		if (conn->GetIsGreenplum())
+    // fuck the version check
+		/*if (conn->GetIsGreenplum())
 		{
 			// Greenplum HAWQ (SQL on Hadoop) is not supported by this pgAdmin version
 			if (conn->GetIsHawq())
@@ -882,7 +883,7 @@ int pgServer::Connect(frmMain *form, bool askPassword, const wxString &pwd, bool
 				             wxString(SERVER_MIN_VERSION_T).c_str(),
 				             wxString(SERVER_MAX_VERSION_T).c_str());
 			}
-		}
+		}*/
 
 		connected = true;
 		bool hasUptime = false;
