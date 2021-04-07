@@ -1,8 +1,17 @@
 pgAdmin III README
 ==================
 
--------------------------------------------------------------------------------
-NOTE! This is a fork of the official pgAdmin3 due to it no longer being
+**NOTE!** This is a fork of https://github.com/Symbiatch/pgAdmin3, which supports
+PostgreSQL 11 and newer. The addition of this fork is, that it gets compiled
+on Linux systems smoothly and has few more fixes:
+
+- uses the latest version of wxWidgets
+- contains some fix regarding plugins factory
+- contains fix of .gitignore and improved desktop integration
+- contains markdown versions of README and INSTALL
+
+#### The original note from Symbiatch:  
+This is a fork of the official pgAdmin3 due to it no longer being
 maintained. This fork is meant to provide support for new PostgreSQL server
 versions to users who want to use pgAdmin3 rather than pgAdmin4. If you have
 issues with this version do NOT contact the original developers, rather post
@@ -12,9 +21,8 @@ The binaries are available at https://tokavuh.com/pgadmin3redux/
 Note! The application is in debug mode and will show some warnings. I am
 trying to get it to compile and work in release mode so these would go away
 as well as fixing the underlying issues (newer wxWidgets libraries).
--------------------------------------------------------------------------------
 
- 
+
 Introduction
 ------------
 
@@ -41,7 +49,7 @@ under the PostgreSQL License.
 Compilation
 -----------
 
-Please see the INSTALL file for compilation and installation instructions.
+Please see the [INSTALL](INSTALL.md) file for compilation and installation instructions.
 
 Translation
 -----------

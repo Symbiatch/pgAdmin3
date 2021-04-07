@@ -76,6 +76,7 @@ void frmMain::LoadPluginUtilities()
 				// Add the previous app if required.
 				AddPluginUtility(util);
 				pluginsMenu->AppendSeparator();
+        pluginsPopupMenu->AppendSeparator();
 			}
 
 			// Title
@@ -218,7 +219,7 @@ void frmMain::CreatePluginUtility(PluginUtility *util)
 	wxLogInfo(wxT("            Database?: %s"), util->database ? wxT("Yes") : wxT("No"));
 	wxLogInfo(wxT("        Set Password?: %s"), util->set_password ? wxT("Yes") : wxT("No"));
 
-	new pluginUtilityFactory(menuFactories, pluginsMenu, util);
+	new pluginUtilityFactory(menuFactories, pluginsMenu, pluginsPopupMenu, util);
 }
 
 // Clear a PluginUtility struct
@@ -237,7 +238,8 @@ void frmMain::ClearPluginUtility(PluginUtility *util)
 }
 
 // The actionFactory for the plugin utilities
-pluginUtilityFactory::pluginUtilityFactory(menuFactoryList *list, wxMenu *menu, PluginUtility *util) : actionFactory(list)
+pluginUtilityFactory::pluginUtilityFactory(menuFactoryList *list, wxMenu *menu, wxMenu *popup_menu,
+  PluginUtility *util) : actionFactory(list)
 {
 	title = util->title;
 	command = util->command;
@@ -249,6 +251,7 @@ pluginUtilityFactory::pluginUtilityFactory(menuFactoryList *list, wxMenu *menu, 
 	set_env = util->set_env;
 
 	menu->Append(id, title, description);
+	popup_menu->Append(id, title, description);
 }
 
 
@@ -380,8 +383,10 @@ bool pluginUtilityFactory::CheckEnable(pgObject *obj)
 	{
 		// If we need a specific server type, we can't enable unless
 		// we have a connection.
-		if (!obj || !(obj->GetConnection()->GetStatus() == PGCONN_OK))
-			return false;
+    if(!obj) return false;
+    pgConn *pConn = obj->GetConnection();
+    if(!pConn) return false;
+    if(pConn->GetStatus() != PGCONN_OK) return false;
 
 		// Get the server type.
 		wxString serverType = wxT("postgresql");
@@ -448,7 +453,9 @@ pluginButtonMenuFactory::pluginButtonMenuFactory(menuFactoryList *list, wxMenu *
 wxWindow *pluginButtonMenuFactory::StartDialog(frmMain *form, pgObject *obj)
 {
 	if (form->GetLastPluginUtility() && form->GetLastPluginUtility()->CheckEnable(obj))
+  {
 		return form->GetLastPluginUtility()->StartDialog(form, obj);
+  }
 	else
 	{
 		wxMouseEvent evt;

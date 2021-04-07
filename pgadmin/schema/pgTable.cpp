@@ -1769,7 +1769,8 @@ wxWindow *executePgstattupleFactory::StartDialog(frmMain *form, pgObject *obj)
 	else
 		((pgTable *)obj)->iSetShowExtendedStatistics(false);
 
-	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(), (ctlMenuToolbar *)form->GetToolBar());
+	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(),
+    (ctlMenuToolbar *)form->GetToolBar(), form->GetPluginsPopup());
 
 	return 0;
 }

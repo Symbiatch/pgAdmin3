@@ -333,7 +333,8 @@ wxWindow *enabledisableEventTriggerFactory::StartDialog(frmMain *form, pgObject 
 		form->GetSqlPane()->SetText(((pgEventTrigger *)obj)->GetSql(form->GetBrowser()));
 		form->GetSqlPane()->SetReadOnly(true);
 	}
-	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(), (ctlMenuToolbar *)form->GetToolBar());
+	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(),
+    (ctlMenuToolbar *)form->GetToolBar(), form->GetPluginsPopup());
 
 	return 0;
 }

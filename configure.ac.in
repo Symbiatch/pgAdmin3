@@ -148,6 +148,7 @@ AC_CONFIG_FILES([Makefile
 		 plugins.d/Makefile
 		 pgadmin/Makefile
 		 pkg/Makefile
+     pkg/pgadmin3.desktop
 		 pkg/debian/Makefile
 		 pkg/mac/Makefile
 		 pkg/mandrake/Makefile

@@ -319,7 +319,8 @@ wxWindow *validateCheckFactory::StartDialog(frmMain *form, pgObject *obj)
 		form->GetSqlPane()->SetText(((pgCheck *)obj)->GetSql(form->GetBrowser()));
 		form->GetSqlPane()->SetReadOnly(true);
 	}
-	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(), (ctlMenuToolbar *)form->GetToolBar());
+	form->GetMenuFactories()->CheckMenu(obj, form->GetMenuBar(),
+    (ctlMenuToolbar *)form->GetToolBar(), form->GetPluginsPopup());
 
 	return 0;
 }

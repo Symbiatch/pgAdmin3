@@ -432,7 +432,7 @@ void frmMain::execSelChange(wxTreeItemId item, bool currentNode)
 	// invalid click, so ignore.
 	if (!currentObject)
 	{
-		menuFactories->CheckMenu(currentObject, menuBar, toolBar);
+		menuFactories->CheckMenu(currentObject, menuBar, toolBar, pluginsPopupMenu);
 	}
 	else
 	{
@@ -597,7 +597,7 @@ void frmMain::setDisplay(pgObject *data, ctlListView *props, ctlSQLBox *sqlbox)
 		delete indivMenu;
 	}
 
-	menuFactories->CheckMenu(data, menuBar, toolBar);
+	menuFactories->CheckMenu(data, menuBar, toolBar, pluginsPopupMenu);
 
 	menuFactories->EnableSubmenu(menuBar, MNU_CONFIGSUBMENU);
 	menuFactories->EnableSubmenu(menuBar, MNU_SLONY_SUBMENU);

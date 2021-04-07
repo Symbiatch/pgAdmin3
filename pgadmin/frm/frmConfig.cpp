@@ -162,7 +162,7 @@ void frmConfig::InitFrame(const wxChar *frameName)
 #endif
 
 	menuFactories->RegisterMenu(this, wxCommandEventHandler(pgFrame::OnAction));
-	menuFactories->CheckMenu(0, menuBar, toolBar);
+	menuFactories->CheckMenu(0, menuBar, toolBar, 0);
 
 	wxAcceleratorEntry entries[3];
 

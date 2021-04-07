@@ -196,7 +196,7 @@ frmMain::frmMain(const wxString &title)
 	// Setup menus
 	pgaFactory::RegisterMenu(this, wxCommandEventHandler(frmMain::OnNew));
 	menuFactories->RegisterMenu(this, wxCommandEventHandler(frmMain::OnAction));
-	menuFactories->CheckMenu(0, menuBar, toolBar);
+	menuFactories->CheckMenu(0, menuBar, toolBar, pluginsPopupMenu);
 
 	// Kickstart wxAUI
 	manager.AddPane(browser, wxAuiPaneInfo().Name(wxT("objectBrowser")).Caption(_("Object browser")).Left().MinSize(wxSize(100, 200)).BestSize(wxSize(200, 450)));
@@ -277,6 +277,7 @@ void frmMain::CreateMenus()
 
 	fileMenu = new wxMenu();
 	pluginsMenu = new wxMenu();
+  pluginsPopupMenu = new wxMenu();
 	viewMenu = new wxMenu();
 	editMenu = new wxMenu();
 	newMenu = new wxMenu();
@@ -460,7 +461,7 @@ void frmMain::CreateMenus()
 	new serverStatusFactory(menuFactories, toolsMenu, 0);
 
 	// Add the plugin toolbar button/menu
-	new pluginButtonMenuFactory(menuFactories, pluginsMenu, toolBar, pluginUtilityCount);
+	new pluginButtonMenuFactory(menuFactories, pluginsPopupMenu, toolBar, pluginUtilityCount);
 
 	//--------------------------
 	toolBar->AddSeparator();
@@ -512,6 +513,8 @@ void frmMain::CreateMenus()
 	{
 		pluginsMenu->Append(MNU_DUMMY, _("No plugins installed"));
 		pluginsMenu->Enable(MNU_DUMMY, false);
+		pluginsPopupMenu->Append(MNU_DUMMY, _("No plugins installed"));
+		pluginsPopupMenu->Enable(MNU_DUMMY, false);
 	}
 
 	treeContextMenu = 0;
@@ -1102,9 +1105,9 @@ int frmMain::ReconnectServer(pgServer *server, bool restore)
 					EndMsg(true);
 			}
 			if (item)
-				GetMenuFactories()->CheckMenu((pgObject *)browser->GetItemData(item), GetMenuBar(), (ctlMenuToolbar *)GetToolBar());
+				GetMenuFactories()->CheckMenu((pgObject *)browser->GetItemData(item), GetMenuBar(), (ctlMenuToolbar *)GetToolBar(), pluginsPopupMenu);
 			else
-				GetMenuFactories()->CheckMenu(server, GetMenuBar(), (ctlMenuToolbar *)GetToolBar());
+				GetMenuFactories()->CheckMenu(server, GetMenuBar(), (ctlMenuToolbar *)GetToolBar(), pluginsPopupMenu);
 			browser->SetFocus();
 			return res;
 		}

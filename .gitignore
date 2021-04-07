@@ -3,3 +3,16 @@
 *.user
 Debug
 Release
+*.o
+*.log
+autom4te.cache
+Makefile
+.deps
+.dirstamp
+stamp-h1
+config.h
+config.status
+pgadmin/include/libssh2/libssh2_config.h
+pgadmin/include/libssh2/stamp-h2
+pgadmin/pgadmin3
+xtra/png2c/png2c

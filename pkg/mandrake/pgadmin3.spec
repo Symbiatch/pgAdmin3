@@ -1,5 +1,5 @@
 %define name		pgadmin3
-%define major_version 	1.22.2
+%define major_version 	1.22.3
 %define minor_version 	1mdk
 %define wxGTK2_version 	2.6.0
 %define withwxconfig 	wx-config
